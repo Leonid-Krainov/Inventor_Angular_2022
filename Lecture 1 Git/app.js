@@ -34,3 +34,14 @@ function grid(n) {
         }
     }
 }
+
+// task 3
+
+function parenthesesValidator (str){
+    let prevStr = "";
+    while (str.length !== prevStr.length) {
+        prevStr = str;
+        str = str.replace("()", "");
+    }
+    return str.length === 0;
+}
