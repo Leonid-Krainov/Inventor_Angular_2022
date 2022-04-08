@@ -1,7 +1,8 @@
 // task 1
 
 function calculate(str) {
-    let arrayFromStr = str.split(" ")
+    if (typeof str !== "string" || !str) return "Wrong data";
+    const arrayFromStr = str.split(" ")
     let dotAmount = 0;
     switch (arrayFromStr[1]) {
         case "+" :
@@ -27,7 +28,7 @@ function grid(n) {
     const alphabet = 'abcdefghijklmnopqrstuvwxyz';
     for (let i=0 ; i<n ; i++) {
         if (i+n > alphabet.length) {
-            console.log (alphabet.substring(i) + alphabet.substring(0,i+n-26));
+            console.log(alphabet.substring(i) + alphabet.substring(0,i+n-26));
         }
         else {
             console.log(alphabet.substring(i, i + n));
@@ -38,6 +39,7 @@ function grid(n) {
 // task 3
 
 function parenthesesValidator (str){
+    if (typeof str !== "string" || !str) return "Wrong data";
     let prevStr = "";
     while (str.length !== prevStr.length) {
         prevStr = str;
